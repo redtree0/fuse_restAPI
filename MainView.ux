@@ -1,0 +1,45 @@
+<App>
+	<JavaScript File="restAPI.js" />
+	<ClientPanel>
+		<Panel ux:Class="mine">
+			<Text Value="test" Clicked="{clickHandler}" />
+		</Panel>
+		
+		<TextInput ux:Class="input" PlaceholderText="Username" PlaceholderColor="#ccc" Height="50"  Padding="5" Margin="10" IsPassword="false">
+			<Rectangle Layer="Background">
+				<Stroke Width="2" Brush="#ccc" />
+				<SolidColor Color="White" Opacity="1"/>
+			</Rectangle>
+		</TextInput>
+
+		<StackPanel>
+			<Text Value="test" Clicked="{clickHandler}" />
+			<Text Value="BLE Scan Start" Clicked="{scanStart}" />
+			<Text Value="BLE Scan Stop" Clicked="{scanStop}" />
+			<Text Value="BLE Connect" Clicked="{connect}" />
+			<Text Value="BLE DisConnect" Clicked="{clickHandler}" />
+
+
+			<input  PlaceholderText="IP" Value="{entryStr}" />
+			<Text Value="Result URL : {entryStr}" />
+			<!-- <Text Value="Mydata : {tdata}" /> -->
+			<Text Value="Result Data : {tdata}" />
+
+			<Each Items="{tdata}">
+					<DockPanel Height="30" Margin="5">
+						<Panel DockPanel.Dock="Top" Margin="10" Height="30">
+							<Rectangle Layer="Background" CornerRadius="10" Color="#03A9F4"/>
+							<Text Value="{test}" TextAlignment="Center" Alignment="Center" />
+						</Panel>
+						<Panel DockPanel.Dock="Top" Margin="10" Height="30">
+							<Rectangle Layer="Background" CornerRadius="10" Color="#03A9F4"/>
+							<Text Value="{address}" TextAlignment="Center" Alignment="Center" />
+						</Panel>
+						<!-- <Rectangle Layer="Background" CornerRadius="10" Color="{hexValue}"/> -->
+					</DockPanel>
+				</Each>
+		</StackPanel>
+		
+		
+	</ClientPanel>
+</App>
